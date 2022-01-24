@@ -1,5 +1,7 @@
 
 /* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -33,9 +35,8 @@ nav{
     left: 0;
     width: 100%;
     height: 7vh;
-    /* background-color: rgba(255, 255, 255, 0.7); */
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(30px);
-    color: #2C3E50;
     letter-spacing: 1px;
     display: flex;
     justify-content: center;
@@ -59,7 +60,7 @@ nav{
 }
 
 #navLogo{
-    color: #D35400;
+    color: #ECF0F1;
     font-size: large;
     font-weight: 500;
     height: 3vh;
@@ -84,13 +85,12 @@ nav{
     font-weight: 500;
     text-decoration: none;
     border-radius: 3px;
-    color: #2C3E50;
+    color: white;
     height: 3.5vh;
     padding: 0 10px;
-    /* background-color: darkslategrey; */
     display: flex;
     align-items: center;
-    transition: 100ms;
+    transition: 300ms;
 }
 
 .navContact{
@@ -101,23 +101,38 @@ nav{
     color: #fff;
     height: 3.5vh;
     padding: 0 10px;
-    /* background-color: darkslategrey; */
+    transition: 300ms;
     display: flex;
     align-items: center;
 }
 
-.navSectionLinks:hover{
-    border-left: solid #2C3E50 3px;
-    /* background: #ECF0F1;
-    color: #2C3E50; */
-    /* font-weight: 600; */
+.navContact:hover{
+    background: #ECF0F1;
+    color: #D35400;
+}
+
+.navSectionLinks:hover {
+    color: black;
 }
 
 .navActive{
+    position: relative;
     background: #ECF0F1;
     color: #2C3E50;
-    border-left: #2C3E50 solid 3px;
+    transition: 500ms;
     /* font-weight: 600; */
+}
+
+.navActive::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2C3E50;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 
@@ -183,46 +198,60 @@ nav{
 }
 .pageSection:nth-of-type(2){
     background: #27AE60;
-
+    
 }.pageSection:nth-of-type(3){
-    background: #ECF0F1;
-    color: #7F8C8D;
-    height: 60px;
+    background: #2C3E50;
+    color: #ECF0F1;
+    height: 30px;
+    font-size: larger;
 }
 /* Home Page Styling */
 
 #home{
-    font-family: 'Montserrat';
-    background-color: black;
+    font-family: 'Raleway';
     color: #ECF0F1;
     height: 100vh;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
     background-image: url(img/bg1.jpg);
     background-size: cover;
-    background-position: right;
+    background-position: bottom;
 }
 
+
 #homeTextWrapper{
-    min-height: 100vh;
+    border-radius: 50px;
+    background-image: url(img/flatstuff.png);
+    background-size: cover;
+    background-position: top;
+    height: 70vh;
     padding-left: 75px;
-    flex:1;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* box-shadow: inset 50px 50px 100px rgba(0,0,0,0.7); */
+    transition: 30000ms;
+
     
 }
 
+#home:hover #homeTextWrapper{
+    
+    background-position: center;
+}
+
+
 #homeTextWrapper>h1{
-    color: black;
+    font-family:'Fredoka One';
+    color: #34495E;
     font-size: 7rem;
-    font-weight: 200;
+    font-weight: 100;
     margin-bottom: 50px;
 }
 #homeTextWrapper>div{
     font-size: 3rem;
-    color: #2980B9;
+    color: #2C3E50;
 }
 
 
@@ -233,48 +262,83 @@ nav{
     color: black;
 }
 
+
+#homeImageWrapper{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 50%;
+}
+
+
+#homeImageWrapper:hover:before{
+    left:30px;
+}
+
+#homeImageWrapper::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:-30px;
+    border: solid #CACEEA 15px;
+    border-radius: 50%;
+    transition: 300ms;
+}
+
+#homeImage{
+    height: 70vh;
+    width: 30vw;
+    background-image: url(img/self.jpg);
+    background-size: cover;
+    background-position: top;
+    border-radius: 50%;
+}
+
+
 #homeButtons{
     height: 10vh;
-    width: 60%;
+    width: 80%;
     margin-top: 100px;
     
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .homebtn{
+    position: relative;
     font-size: 2rem;
-    font-weight: 500;
-    color: #16A085;
-    flex: 0.35;
+    font-weight: 900;
+    background: #B7DCE5;
+    border-radius: 16px;
+    color: #2C3E50;
+    width: 200px;
     height: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border-radius: 8px; */
-    border: solid #16A085 0.5px;
+    transition: 300ms;
 }
+
+.homebtn::before{
+    content: ">";
+    position: absolute;
+    top:8px;
+    opacity: 0;
+    right: 15px;
+    transition: 200ms;
+}
+
+.homebtn:hover::before{
+    opacity: 1;
+}
+
 .homebtn:hover{
-    color: #ECF0F1;
-    background-color: #16A085;
-}
-
-#homeImageWrapper{
-
-    padding: 25px;
-    margin-left: 140px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-#homeImage{
-    height: 50vh;
-    width: 20vw;
-    background-image: url(img/self_bw.jpg);
-    background-size: cover;
-    background-position: top;
+    padding-right: 25px;
+    background-color: #CACEEA;
 }
 
 /* My Hobbies Page Styling */
@@ -515,7 +579,7 @@ nav{
   /* Footer styling */
 
   footer{
-    height: 50vh;
+    height: 25vh;
     width: 100%;
     background: #2C3E50;
 
@@ -526,14 +590,13 @@ nav{
   }
 
   .footerSections{
-      letter-spacing: 2px;
-      text-decoration: underline;
-      font-family: 'Poppins';
-      font-size: x-large;
-      font-weight: 700;
+      font-family: 'Montserrat';
+      font-size: larger;
+      font-weight: 500;
       height: 80%;
       width: 20%;
       background: rgba(255, 255, 255, 0.02);
+      color: #ECF0F1;
       /* background-color: #3498DB; */
       border-radius: 40px;
       display: flex;
@@ -544,11 +607,19 @@ nav{
 
     
     .footerSections:hover{
-        /* background: rgba(255, 255, 255, 0.3); */
+        /* background: rgba(255, 255, 255, 0.3);a */
         
   }
 
   .footerSections a{
     color: #ECF0F1;
     opacity: 1;
+  }
+
+  .footerSections a:hover{
+      text-decoration: underline;
+  }
+
+  .footerSections h2{
+      font-weight: 300;
   }
