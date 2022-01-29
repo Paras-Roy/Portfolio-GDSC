@@ -376,6 +376,7 @@ nav{
     bottom:30px;
     left: 30px;
     background: #ECF0F1;
+    color: black;
     border-radius: 15px;
 
     display: flex;
@@ -385,11 +386,18 @@ nav{
 
 }
 
+.hobbiesBox>img{
+    position: absolute;
+    width: 250px;
+    opacity: 0.2;
+}
+
 .hobbiesContent{
     padding: 20px;
     text-align: center;
 
 }
+
 
 .hobbiesContent h2{
     font-size: 4em;
