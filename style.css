@@ -59,7 +59,7 @@ nav{
     align-items: center;
 }
 
-#navLogo{
+#navLogo a{
     color: #ECF0F1;
     font-size: large;
     font-weight: 500;
